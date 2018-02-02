@@ -1,0 +1,32 @@
+------------------------------------------------------------------------
+Algorytmy i struktury danych II 
+------------------------------------------------------------------------
+
+Temat: Najdluzszy wspolny podciag
+
+
+
+------------------------------------------------------------------------
+
+Zadanie 1. (4 pkt.)
+
+Zaimplementuj algorytm wyszukiwania najdluzszego wspolnego podciagu
+metoda programowania dynamicznego.
+
+WEJSCIE: 
+- dwa napisy A i B dowolnej dlugosci (maksymalnie 1000 znakow)
+podawane ze standardowego wejscia
+
+WYJSCIE:
+- dlugosc najdluzszego wspolnego podciagu A i B oraz jeden najdluzszy
+wspolny podciag.
+
+
+
+------------------------------------------------------------------------
+
+Zadanie 2. (5 pkt.)
+
+Rozbuduj Zadanie 1 tak, aby program wypisywal rowniez wszystkie 
+najdluzsze wspolne podciagi bez powtarzania.
+
