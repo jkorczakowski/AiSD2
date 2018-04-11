@@ -43,7 +43,7 @@ public class Main
     private static String[] huffmanLength = new String[26];
     private static int[] huffmanData = new int[26];
 
-   private static void printCode(Node root, String s)
+   private static void print(Node root, String s)
     {
 
         if(root.left == null && root.right == null && Character.isLetter(root.c))
@@ -59,8 +59,8 @@ public class Main
 
                 return;
         }
-        printCode(root.left, s + "0");
-        printCode(root.right, s + "1");
+        print(root.left, s + "0");
+        print(root.right, s + "1");
     }
 
     public static void main(String[] args) throws Exception
@@ -126,14 +126,14 @@ public class Main
         System.out.println("|  Character  |  Huffman Code   | Frequency  |");
         System.out.println("----------------------------------------------");
 
-        printCode(root, "");
+        print(root, "");
 
         int encodedLength = 0;
 
         for(int i=0; i<frequencies.size(); i++)
         {
             encodedLength +=huffmanData[i] * huffmanLength[i].length();
-            System.out.println(huffmanLength[i].length() + " " + huffmanData[i]);
+            //System.out.println(huffmanLength[i].length() + " " + huffmanData[i]);
         }
 
         int normalLength = (int) Math.ceil(sqrt(frequencies.size()));
