@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-const int N = 15;
+//const int N = 15;
 typedef struct node_t
 {
    struct node_t *parent;
@@ -50,9 +50,14 @@ void union_sets(Node *x, Node *y)
 
 
 
-int main()
+int main(int argc, char* argv[])
 {
-    
+    if(argc != 2)
+    {
+	 printf("Enter number of nodes as an argument\n");
+	    exit(0);
+    }
+	int N = atol(argv[1]);
     Node z[N], *p;
     int i,j,x,y,c;
     srand(time(NULL));
@@ -63,14 +68,14 @@ int main()
         make_set(&z[i]);
     }
 
- /*    for(i = 0; i < N; i++)
+     for(i = 0; i < N; i++)
   {
     x = find_set(&z[i])->data;
     if(x == i) c++;
-    printf("%d is in set %d with rank %d\n",i,x,z[i].rank);
+    printf("%d is in set %d\n",i,x);
   }
 
-*/
+
 
     printf("\n\n");
 
