@@ -43,7 +43,6 @@ public class Main {
         pattern = pattern.replaceAll("\n", "").replaceAll("\n","");
         int M = pattern.length()-1;
         int N = text.length()-1;
-        System.out.println("M = " + M);
 
         for (int i=0; i<=N-M; i++) {
             int j;
@@ -79,21 +78,21 @@ public class Main {
             t=(alphaSize*t + text.charAt(i))%prime;
         }
 
-        for (i = 0; i <= N - M; i++)
+        for (i=0; i<=N-M; i++)
         {
-            if ( p == t )
+            if (p==t)
             {
-                for (j = 0; j < M; j++)
+                for (j=0; j<M; j++)
                 {
                     if (text.charAt(i+j) != pattern.charAt(j))
                         break;
                 }
 
-                if (j == M)
+                if (j==M)
                     System.out.println("Znalezione wystąpienie wzorca od pozycji: " + i);
             }
 
-            if ( i < N-M )
+            if (i<N-M)
             {
                 t = (alphaSize*(t - text.charAt(i)*h) + text.charAt(i+M))%prime;
                 if (t < 0)
