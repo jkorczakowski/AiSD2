@@ -10,6 +10,8 @@ public class Main {
     {
         String text = readAllBytes(args[0]);
         String pattern = readAllBytes(args[1]);
+        text = text.replaceAll("\r", "").replaceAll("\n", "");
+        pattern = pattern.replaceAll("\n", "").replaceAll("\n","");
 
     //    System.out.println("TEXT: " + text);
     //    System.out.println("PATTERN: " + pattern);
@@ -21,7 +23,7 @@ public class Main {
         long elapsedTimeMillis = System.currentTimeMillis()-start;
         System.out.println("TIME: " + elapsedTimeMillis);
         System.out.println();
-        int prime = 101;
+        int prime = 7;
         System.out.println("Rabin-Karp algorithm:");
         start = System.currentTimeMillis();
         rabinKarp(text,pattern,prime);
@@ -39,8 +41,7 @@ public class Main {
 
     private static void naive(String text, String pattern)
     {
-        text = text.replaceAll("\r", "").replaceAll("\n", "");
-        pattern = pattern.replaceAll("\n", "").replaceAll("\n","");
+
         int M = pattern.length()-1;
         int N = text.length()-1;
 
@@ -59,8 +60,7 @@ public class Main {
 
     private static void rabinKarp(String text, String pattern, int prime)
     {
-        text = text.replaceAll("\r", "").replaceAll("\n", "");
-        pattern = pattern.replaceAll("\n", "").replaceAll("\n","");
+
         int M = pattern.length();
         int N = text.length();
         int i,j;
@@ -103,8 +103,6 @@ public class Main {
 
     private static void KMP(String text, String pattern)
     {
-        text = text.replaceAll("\r", "").replaceAll("\n", "");
-        pattern = pattern.replaceAll("\n", "").replaceAll("\n","");
         int M = pattern.length();
         int N = text.length();
 
